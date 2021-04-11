@@ -2,7 +2,7 @@ const { Section1 } = require('../objects/section-1')
 
 describe('Problem 1', () => {
 
-	it('Test1',() => {
+    it('Test1',() => {
 
     const name = 'Name';
     const age = 25;
@@ -10,10 +10,10 @@ describe('Problem 1', () => {
     cy.visit('http://localhost:8080/section-1');
 
     /*table not existing test*/
-		cy.get('[id="alaya-table"]').should('not.be.visible');
+	cy.get('[id="alaya-table"]').should('not.be.visible');
 
     /*click show Table*/
-	  cy.get('[id^=table-toggle-button]').contains('Show table').click();
+    cy.get('[id^=table-toggle-button]').contains('Show table').click();
 
     /* table is 5 columns wide*/
     cy.get('.table-header').find('th').should('have.length', 5);
@@ -28,8 +28,6 @@ describe('Problem 1', () => {
 
     /*Assert that an admin has the ID of 1*/
     cy.get('tr').eq(1).contains('admin');
-
-   
   
     /*trying to figure out how to iterate through the table, can only find the first value so just doing the checks which containuser*/
     cy.get('tr').eq(3).contains('user');
@@ -38,12 +36,6 @@ describe('Problem 1', () => {
     cy.get('tr').eq(7).contains('user');
     cy.get('tr').eq(8).contains('user');
     cy.get('tr').eq(10).contains('user');
-
-
-
-
-
-
     
 
 
@@ -78,15 +70,7 @@ describe('Problem 1', () => {
 
     
 
-	})
+})
 
- 
-
-
-  /**
-   * Example:
-   * To access assertSampleApiResponse() from Section1, you can do: Section1.actions.assertSampleApiResponse();
-   *
-   * Test away!
-   */
+   
 })
